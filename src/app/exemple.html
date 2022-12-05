@@ -1,6 +1,6 @@
 <mat-form-field class="liste">
-  <mat-chip-list #chipList>
-    <mat-chip
+  <mat-chip-grid #chipList>
+    <mat-chip-row
       *ngFor="let vetement of vetements"
       removable
       (removed)="remove(vetement)"
@@ -8,12 +8,12 @@
     >
       {{vetement.nom}}
       <mat-icon matChipRemove>cancel</mat-icon>
-    </mat-chip>
+    </mat-chip-row>
     <input
       placeholder="Nouveau vêtement..."
       [matChipInputFor]="chipList"
       [matChipInputSeparatorKeyCodes]="separateurs"
       (matChipInputTokenEnd)="add($event)"
     />
-  </mat-chip-list>
+  </mat-chip-grid>
 </mat-form-field>
